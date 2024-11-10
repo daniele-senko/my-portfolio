@@ -3,10 +3,11 @@ import Avatar from "../../../../assets/images/avatar.jpg";
 import theme from "../../../../theme";
 import DownloadIcon from "@mui/icons-material/Download";
 import MailIcon from "@mui/icons-material/Mail";
-import StyledButton from "../../../../components/Styled/StyledButton";
+import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 
 const Hero = () => {
+
   const StyledHero = styled("div")(() => ({
     backgroundColor: theme.palette.primary.main,
     height: "100vh",
@@ -71,7 +72,7 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <StyledButton>
+                  <StyledButton onClick={() => console.log("download")} >
                     <DownloadIcon />
                     <Typography>Download CV</Typography>
                   </StyledButton>
@@ -84,7 +85,7 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <StyledButton>
+                  <StyledButton onClick={() => console.log("Contato")} >
                     <MailIcon />
                     <Typography>Contato</Typography>
                   </StyledButton>
