@@ -11,8 +11,9 @@ let theme = createTheme({
     },
   },
     typography: {
-        fontFamily: '"Poppins"',
+        fontFamily: '"Montserrat", sans-serif',
     },
+
 });
 
 theme = responsiveFontSizes(theme);
