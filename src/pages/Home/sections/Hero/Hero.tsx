@@ -22,7 +22,7 @@ const Hero = () => {
   }));
 
   const StyledImg = styled("img")(({ theme }) => ({
-    width: "75%",
+    width: "60%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
   }));
@@ -34,7 +34,7 @@ const Hero = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} md={5}>
               <Box position="relative" >
-                <Box position="absolute" width={"130%"} top={-100} right={0}>
+                <Box position="absolute" width={"110%"} top={-100} right={0}>
                   <AnimatedBackground />
                 </Box>
                 <Box position="relative" textAlign="center">
