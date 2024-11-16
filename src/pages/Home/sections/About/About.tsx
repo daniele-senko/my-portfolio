@@ -146,6 +146,16 @@ const About = () => {
           </Grid>
           <Grid item xs={12} md={2.4}>
             <StyledSkills variant="outlined">
+              <Typography variant="body1">Node.js</Typography>
+            </StyledSkills>
+          </Grid>
+          <Grid item xs={12} md={2.4}>
+            <StyledSkills variant="outlined">
+              <Typography variant="body1">Express</Typography>
+            </StyledSkills>
+          </Grid>
+          <Grid item xs={12} md={2.4}>
+            <StyledSkills variant="outlined">
               <Typography variant="body1">TailwindCSS</Typography>
             </StyledSkills>
           </Grid>
