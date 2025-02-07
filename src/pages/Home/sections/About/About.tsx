@@ -92,7 +92,7 @@ const About = () => {
           Sou Daniele, uma profissional com aproximadamente um ano de
           experiência em desenvolvimento web, comprometida com a criação de
           aplicações eficientes e focadas na otimização da experiência do
-          usuário, sempre seguindo altos padrões da indústria. 13Em busca
+          usuário, sempre seguindo altos padrões da indústria. Em busca
           constante de aprimoramento, estou expandindo minhas habilidades para
           oferecer soluções inovadoras e eficazes. Sou graduanda em Sistemas de
           Informação pela Universidade do Estado de Mato Grosso (UNEMAT), o que
@@ -152,6 +152,11 @@ const About = () => {
           <Grid item xs={12} md={2.4}>
             <StyledSkills variant="outlined">
               <Typography variant="body1">Express</Typography>
+            </StyledSkills>
+          </Grid>
+          <Grid item xs={12} md={2.4}>
+            <StyledSkills variant="outlined">
+              <Typography variant="body1">MySQL</Typography>
             </StyledSkills>
           </Grid>
           <Grid item xs={12} md={2.4}>
