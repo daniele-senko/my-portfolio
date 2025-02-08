@@ -10,6 +10,7 @@ import {
   Modal,
   IconButton,
   styled,
+  Divider,
 } from "@mui/material";
 import { useState } from "react";
 import CodeIcon from "@mui/icons-material/Code";
@@ -210,6 +211,9 @@ export default function Projects() {
 
   return (
     <StyledProjects id="projects">
+  <Box sx={{ width: '80%' }}>
+    <Divider />
+  </Box>
       <Container
         maxWidth="lg"
       >
