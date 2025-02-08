@@ -1,4 +1,4 @@
-import { Divider, Grid, Paper, Stack, styled, Typography } from "@mui/material";
+import { Grid, Paper, Stack, styled, Typography } from "@mui/material";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import SchoolIcon from "@mui/icons-material/School";
 import theme from "../../../../theme";
@@ -16,6 +16,8 @@ const About = () => {
     [theme.breakpoints.up("xs")]: {
       // <= mobile
       paddingTop: "100px",
+      paddingLeft: theme.spacing(2),
+      paddingRight: theme.spacing(2),
     },
     [theme.breakpoints.up("md")]: {
       // >=mobile
@@ -85,8 +87,8 @@ const About = () => {
         <Typography
           pt={3}
           sx={{
-            marginLeft: "9rem",
-            marginRight: "9rem",
+            marginLeft: { xs: "1rem", md: "9rem" }, 
+            marginRight: { xs: "1rem", md: "9rem" },
             textAlign: "justify",
           }}
         >
@@ -102,8 +104,7 @@ const About = () => {
           tecnologia. Meu objetivo é, no futuro, desenvolver soluções pioneiras
           que integrem essas duas disciplinas.
         </Typography>
-        <Divider sx={{ width: "80%", marginY: 3 }} />
-        <Typography variant="h4" textAlign="center">
+        <Typography variant="h4" textAlign="center" pt= {6}>
           Skills
         </Typography>
         <Grid
@@ -112,74 +113,18 @@ const About = () => {
           justifyContent="center"
           spacing={2}
           pt={3}
-          pr={18}
-          pl={18}
+          sx={{
+            maxWidth: '100%',
+            paddingX: { xs: 2, sm: 4, md: 6 }, 
+          }}
         >
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">HTML</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">CSS</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">JavaScript</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">React</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">TypeScript</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">Java</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">Node.js</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">Express</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">MySQL</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">TailwindCSS</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">Material-UI</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">Git</Typography>
-            </StyledSkills>
-          </Grid>
-          <Grid item xs={12} md={2.4}>
-            <StyledSkills variant="outlined">
-              <Typography variant="body1">Figma</Typography>
-            </StyledSkills>
-          </Grid>
+          {[ "HTML", "CSS", "JavaScript", "React", "TypeScript", "Java", "Node.js", "Express", "MySQL", "TailwindCSS", "Material-UI", "Git", "Figma"].map(skill => (
+            <Grid item xs={12} md={2.4} key={skill}>
+              <StyledSkills variant="outlined">
+                <Typography variant="body1">{skill}</Typography>
+              </StyledSkills>
+            </Grid>
+          ))}
         </Grid>
       </StyledAbout>
     </>
