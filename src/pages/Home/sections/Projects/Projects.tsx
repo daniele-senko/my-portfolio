@@ -58,7 +58,7 @@ const ImagePlaceholder = ({ title }: { title: string }) => (
 const projects: Project[] = [
   {
     title: "Sistema de Cadastro de Usuários",
-    image: "/src/assets/images/cadastro-usuarios.jpg",
+    image: "/assets/images/cadastro-usuarios.jpg",
     stacks: [
       "React.js",
       "JavaScript",
@@ -87,7 +87,7 @@ const projects: Project[] = [
   },
   {
     title: "API - Cadastro de Usuários",
-    image: "/src/assets/images/cadastro-usuarios.jpg",
+    image: "/assets/images/cadastro-usuarios.jpg",
     stacks: ["Node.js", "Express", "MongoDB", "REST APIs"],
     githubUrl: "https://github.com/daniele-senko/API-cadastro-usuarios",
     description:
