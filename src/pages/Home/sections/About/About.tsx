@@ -6,25 +6,26 @@ import theme from "../../../../theme";
 const About = () => {
   const StyledAbout = styled("div")(() => ({
     backgroundColor: theme.palette.primary.contrastText,
-    height: "100vh",
+    minHeight: "100vh",
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
     justifyContent: "flex-start",
     textAlign: "center",
+    padding: theme.spacing(8),
     [theme.breakpoints.up("xs")]: {
       // <= mobile
-      paddingTop: "50px",
+      paddingTop: "100px",
     },
     [theme.breakpoints.up("md")]: {
       // >=mobile
-      paddingTop: "1xp",
+      paddingTop: theme.spacing(8),
     },
   }));
 
   const DemoPaper = styled(Paper)(({ theme }) => ({
     width: 180,
-    height: 130,
+    minHeight: 130,
     padding: theme.spacing(1),
     ...theme.typography.body2,
     textAlign: "center",
@@ -46,7 +47,7 @@ const About = () => {
 
   return (
     <>
-      <StyledAbout>
+      <StyledAbout id="about">
         <Stack
           direction="column"
           spacing={2}
