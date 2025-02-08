@@ -129,7 +129,7 @@ const projects: Project[] = [
   },
   {
     title: "ReadMe",
-    image: "/src/assets/images/ReadME.jpg",
+    image: "/assets/images/rm.jpg",
     stacks: ["Figma", "UI/UX Design", "Prototipagem", "Design Thinking"],
     githubUrl: "https://www.figma.com/file/NxdXJzpwv9aXbMpvB8oYDl/Projeto-IHC",
     description: "Plataforma literária colaborativa (conceito UI/UX no Figma)",
