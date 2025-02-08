@@ -9,7 +9,7 @@ import { AnimatedBackground } from "../../../../components/AnimatedBackground/An
 const Hero = () => {
   const StyledHero = styled("div")(() => ({
     backgroundColor: theme.palette.primary.main,
-    height: "100vh",
+    minHeight: "100vh",
     display: "flex",
     alignItems: "center",
     [theme.breakpoints.up("xs")]: {
@@ -43,7 +43,7 @@ const Hero = () => {
 
   return (
     <>
-      <StyledHero>
+      <StyledHero id="home">
         <Container maxWidth="lg">
           <Grid container spacing={2}>
             <Grid item xs={12} md={5}>
