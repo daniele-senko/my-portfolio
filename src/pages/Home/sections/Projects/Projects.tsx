@@ -216,7 +216,8 @@ export default function Projects() {
         <Typography
           variant="h4"
           textAlign="center"
-          sx={{ mb: { xs: 2, md: 4 } }}
+          sx={{ mb: { xs: 2, md: 6 }, mt: 8 }}
+
         >
           Projetos
         </Typography>
