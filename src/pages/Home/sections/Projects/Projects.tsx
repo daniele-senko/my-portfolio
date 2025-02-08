@@ -151,7 +151,7 @@ const projects: Project[] = [
 
 const StyledProjects = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
-  padding: theme.spacing(8, 0),
+  padding: theme.spacing(2, 0),
   minHeight: "auto",
   display: "flex",
   alignItems: "center",
@@ -212,15 +212,11 @@ export default function Projects() {
     <StyledProjects id="projects">
       <Container
         maxWidth="lg"
-        sx={{
-          pt: { xs: 2, md: 4 },
-          pb: { xs: 4, md: 6 },
-        }}
       >
         <Typography
           variant="h4"
           textAlign="center"
-          sx={{ mb: { xs: 4, md: 6 } }}
+          sx={{ mb: { xs: 2, md: 4 } }}
         >
           Projetos
         </Typography>
