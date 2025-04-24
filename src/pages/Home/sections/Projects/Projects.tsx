@@ -22,7 +22,9 @@ interface Project {
   image: string;
   stacks: string[];
   githubUrl: string;
+  liveUrl: string;
   description: string;
+  highlights: string[];
   features: string[];
   challenges: string[];
 }
@@ -58,6 +60,46 @@ const ImagePlaceholder = ({ title }: { title: string }) => (
 
 const projects: Project[] = [
   {
+    title:
+      "TaskFlow: Sistema de Gerenciamento de Tarefas com Dashboard Analítico",
+    image: "/assets/images/TaskFlow.png",
+    stacks: [
+      "Vue 3 (Composition API)",
+      "Pinia (State Management)",
+      "Chart.js + vue-chart-3",
+      "TailwindCSS (UI/UX)",
+      "Vite (Build Tool)",
+      "Heroicons (Ícones)",
+      "LocalStorage (Persistência)",
+    ],
+    githubUrl: "https://github.com/daniele-senko/taskflow-tododash",
+    liveUrl: "https://taskflow-tododash.vercel.app/",
+    description:
+      "Sistema avançado de gerenciamento de tarefas com dashboard analítico em tempo real, oferecendo visualização de produtividade através de gráficos dinâmicos e métricas personalizáveis.",
+    features: [
+      "CRUD completo com filtros inteligentes (hoje/atrasadas/prioridade)",
+      "Dashboard interativo com gráficos de progresso semanal (Chart.js)",
+      "Persistência automática via LocalStorage (zero configuração)",
+      "Sistema de prioridades (baixa/média/alta) com visualização diferenciada",
+      "Modo dark/light com toggle persistente",
+      "Ordenação multidimensional (data/status/prioridade)",
+      "UI totalmente responsiva (mobile-first)",
+    ],
+    challenges: [
+      "Sincronização em tempo real entre lista de tarefas e gráficos",
+      "Otimização de performance para renderização de múltiplos charts",
+      "Implementação de ordenação complexa (data + prioridade + status)",
+      "Design responsivo para visualização de gráficos em mobile",
+      "Gerenciamento de estado global com Pinia para dados analíticos",
+      "Validação de datas cruzadas (prazos vs. conclusão)",
+    ],
+    highlights: [
+      "Micro-interações para melhor UX (transições, feedback visual)",
+      "Cálculo automático de métricas de produtividade",
+      "Arquitetura modular escalável (stores/components separados)",
+    ],
+  },
+  {
     title: "Sistema de Cadastro de Usuários",
     image: "/assets/images/cadastro-usuarios.jpg",
     stacks: [
@@ -69,8 +111,8 @@ const projects: Project[] = [
       "Vite",
     ],
     githubUrl: "https://github.com/daniele-senko/cadastro-usuarios",
-    description:
-      "Interface React.js para operações CRUD de usuários, desenvolvida com JavaScript para oferecer gestão eficiente de dados através de uma interface dinâmica e responsiva.",
+    liveUrl: "https://crud-cadastro.netlify.app/",
+    description: "Interface React.js para operações CRUD de usuários, desenvolvida com JavaScript para oferecer gestão eficiente de dados através de uma interface dinâmica e responsiva.",
     features: [
       "Funcionalidades completas de Create, Read, Update e Delete (CRUD)",
       "Interface intuitiva com tabelas dinâmicas e formulários interativos",
@@ -85,14 +127,14 @@ const projects: Project[] = [
       "Integração fluida com APIs externas para persistência de dados",
       "Balancear usabilidade com validações robustas de inputs",
     ],
+    highlights: []
   },
   {
     title: "API - Cadastro de Usuários",
     image: "/assets/images/cadastro-usuarios.jpg",
     stacks: ["Node.js", "Express", "MongoDB", "REST APIs"],
     githubUrl: "https://github.com/daniele-senko/API-cadastro-usuarios",
-    description:
-      "API RESTful para gerenciamento de usuários com operações CRUD, desenvolvida em Node.js e Express, integrada a bancos de dados como MongoDB para armazenamento flexível e escalável de dados.",
+    description: "API RESTful para gerenciamento de usuários com operações CRUD, desenvolvida em Node.js e Express, integrada a bancos de dados como MongoDB para armazenamento flexível e escalável de dados.",
     features: [
       "Endpoints para Create, Read, Update e Delete de usuários",
       "Arquitetura modular com rotas, controllers e models organizados",
@@ -107,14 +149,15 @@ const projects: Project[] = [
       "Assegurar segurança em endpoints com middleware de autenticação",
       "Manter compatibilidade com múltiplos bancos de dados",
     ],
+    liveUrl: "",
+    highlights: []
   },
   {
     title: "Gerador de Senhas Aleatórias",
     image: "",
     stacks: ["Java", "POO"],
     githubUrl: "https://github.com/daniele-senko/password-generator-java",
-    description:
-      "Desenvolvi um gerador de senhas seguras em Java para criar senhas aleatórias e robustas, com personalização de comprimento (4 a 64 caracteres) e critérios de complexidade (maiúsculas, minúsculas, números e símbolos), focando em usabilidade e segurança digital.",
+    description: "Desenvolvi um gerador de senhas seguras em Java para criar senhas aleatórias e robustas, com personalização de comprimento (4 a 64 caracteres) e critérios de complexidade (maiúsculas, minúsculas, números e símbolos), focando em usabilidade e segurança digital.",
     features: [
       "Geração de senhas com tamanho e complexidade customizáveis pelo usuário",
       "Inclusão automática de caracteres especiais, números e letras misturados",
@@ -127,6 +170,8 @@ const projects: Project[] = [
       "Balancear simplicidade de uso com requisitos complexos de segurança",
       "Validar entradas do usuário para evitar configurações inválidas",
     ],
+    liveUrl: "",
+    highlights: []
   },
   {
     title: "ReadMe",
@@ -147,6 +192,8 @@ const projects: Project[] = [
       "Sincronizar conteúdos de plataformas com estruturas distintas.",
       "Manter a acessibilidade visual sem comprometer recursos avançados.",
     ],
+    liveUrl: "",
+    highlights: []
   },
 ];
 
@@ -211,17 +258,14 @@ export default function Projects() {
 
   return (
     <StyledProjects id="projects">
-  <Box sx={{ width: '80%' }}>
-    <Divider />
-  </Box>
-      <Container
-        maxWidth="lg"
-      >
+      <Box sx={{ width: "80%" }}>
+        <Divider />
+      </Box>
+      <Container maxWidth="lg">
         <Typography
           variant="h4"
           textAlign="center"
           sx={{ mb: { xs: 2, md: 6 }, mt: 8 }}
-
         >
           Projetos
         </Typography>
@@ -299,39 +343,58 @@ export default function Projects() {
                   ))}
                 </Stack>
 
-                <Stack
+{/* ÁREA MODIFICADA - BOTÕES CONDICIONAIS */}
+<Stack
                   direction={{ xs: "column", sm: "row" }}
                   spacing={2}
                   sx={{
                     mt: "auto",
                     "& .MuiButton-root": {
                       width: { xs: "100%", sm: "auto" },
+                      flexGrow: 1,
                     },
                   }}
                 >
+                  {/* Botão de Código (sempre visível) */}
                   <Button
                     variant="contained"
                     startIcon={<CodeIcon />}
                     href={project.githubUrl}
                     target="_blank"
                     sx={{
-                      flexGrow: 1,
                       py: { xs: 1, md: 1.5 },
                       borderRadius: "8px",
                       textTransform: "none",
                       fontWeight: "bold",
-                      fontSize: { xs: "0.875rem", md: "1rem" },
                     }}
                   >
                     Ver Código
                   </Button>
 
+                  {/* Botão de Demo (condicional) */}
+                  {project.liveUrl && (
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      startIcon={<OpenInNewIcon />}
+                      href={project.liveUrl}
+                      target="_blank"
+                      sx={{
+                        py: { xs: 1, md: 1.5 },
+                        borderRadius: "8px",
+                        textTransform: "none",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Acessar Site
+                    </Button>
+                  )}
+
+                  {/* Botão de Detalhes (sempre visível) */}
                   <Button
                     variant="outlined"
-                    endIcon={<OpenInNewIcon />}
                     onClick={() => handleOpen(project)}
                     sx={{
-                      flexGrow: 1,
                       py: 1.5,
                       borderRadius: "8px",
                       textTransform: "none",
