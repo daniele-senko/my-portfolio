@@ -118,7 +118,7 @@ const About = () => {
             paddingX: { xs: 2, sm: 4, md: 6 }, 
           }}
         >
-          {[ "HTML", "CSS", "JavaScript", "React", "TypeScript", "Java", "Node.js", "Express", "MySQL", "TailwindCSS", "Material-UI", "Git", "Figma"].map(skill => (
+          {[ "HTML", "CSS", "JavaScript", "React", "Vue", "TypeScript", "Java", "Python", "Node.js", "Express", "NestJS", "MySQL", "TailwindCSS", "Material-UI", "Git", "GitHub", "Figma", "Pandas"].map(skill => (
             <Grid item xs={12} md={2.4} key={skill}>
               <StyledSkills variant="outlined">
                 <Typography variant="body1">{skill}</Typography>
