@@ -100,7 +100,7 @@ const About = () => {
 
           Minhas habilidades se estendem ao Back-End (Node.js, Express, MongoDB, MySQL), me permitindo entender o ciclo completo de desenvolvimento. Sou proativa, focada em resultados e reconhecida pela capacidade de aprender novas tecnologias rapidamente (incluindo o prêmio de Melhor Estagiária em 2023).
 
-          Detalhes dos meus projetos (TaskFlow, CRUDs) e código limpo estão disponíveis no meu Portfólio e GitHub (links na seção Em Destaque).
+          Detalhes dos meus projetos (TaskFlow, CRUDs) e código limpo estão disponíveis no meu Portfólio e GitHub.
         </Typography>
         <Typography variant="h4" textAlign="center" pt={6}>
           Skills
