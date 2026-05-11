@@ -15,7 +15,7 @@ export const PROJECTS = [
     description:
       "Ferramenta full-stack para compressão e sanitização automática de documentos jurídicos.",
     image: "/assets/images/JusCleaner.png",
-    tags: ["React", "TypeScript", "Node.js",],
+    tags: ["React", "TypeScript", "Node.js"],
     liveUrl: "https://juscleaner.vercel.app",
     githubUrl: "https://github.com/daniele-senko/juscleaner",
   },
@@ -29,4 +29,21 @@ export const PROJECTS = [
     liveUrl: "https://taskflow-tododash.vercel.app/",
     githubUrl: "https://github.com/daniele-senko/taskflow-tododash",
   },
+];
+
+export const SKILLS = [
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Vue.js",
+  "Next.js",
+  "Tailwind CSS",
+  "Node.js",
+  "MySQL",
+  "MongoDB",
+  "Git",
+  "GitHub",
+  "Figma",
 ];
