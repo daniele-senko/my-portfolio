@@ -47,3 +47,30 @@ export const SKILLS = [
   "GitHub",
   "Figma",
 ];
+
+export const EXPERIENCES = [
+  {
+    id: 1,
+    role: "Estagiária de Inovação e Desenvolvimento",
+    company: "Avoxe Consultoria",
+    period: "Jan 2025 - Presente",
+    description:
+      "Atuação no desenvolvimento frontend e backend de sistemas internos utilizando Next.js, TypeScript, NestJS e Prisma, além da construção do site institucional da empresa com foco em performance, responsividade e arquitetura escalável.",
+  },
+  {
+    id: 2,
+    role: "Desenvolvedora Front-end",
+    company: "Freelance",
+    period: "Ago 2023 - Presente",
+    description:
+      "Desenvolvimento de interfaces modernas e responsivas utilizando React, TypeScript e Tailwind CSS. Foco na otimização de performance e na criação de experiências de utilizador fluidas para diversos clientes",
+  },
+  {
+    id: 3,
+    role: "Desenvolvedora Front-end",
+    company: "TopSapp - Gestão de Provedores",
+    period: "Fev 2024 - jun 2024",
+    description: 
+    "Desenvolvimento de interfaces escaláveis para plataforma SaaS utilizando React.js, TypeScript e TailwindCSS, atuando na manutenção de componentes internos, otimização de entregas e evolução contínua do sistema em ambiente ágil.",
+  },
+];
