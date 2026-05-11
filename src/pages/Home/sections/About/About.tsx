@@ -92,15 +92,15 @@ const About = () => {
             textAlign: "justify",
           }}
         >
-          Desenvolvedora Frontend com 2 anos de experiência prática em desenvolvimento web e visão Full-Stack. Sou Graduanda em Sistemas de Informação (UNEMAT) e meu foco é entregar aplicações robustas e de alta performance que melhoram a experiência do usuário.
-
-          Possuo proficiência em React.js, TypeScript e JavaScript, utilizando ferramentas de estilização modernas como TailwindCSS e Material UI. Em minha atuação como Desenvolvedora Web Freelancer , criei interfaces dinâmicas e responsivas, focando em UI/UX Design (Figma) para projetar interfaces intuitivas que melhoraram o engajamento.
-
-          Além disso, em minha experiência na TopSapp (Sistema de Gestão de Provedores), contribuí para o desenvolvimento de uma plataforma com alcance nacional, sendo responsável pela implementação de novas telas em três projetos simultâneos. Trabalhei com React.js, TypeScript e TailwindCSS, atuando em uma equipe ágil e utilizando Git/GitHub para o ciclo de desenvolvimento contínuo.
-
-          Minhas habilidades se estendem ao Back-End (Node.js, Express, MongoDB, MySQL), me permitindo entender o ciclo completo de desenvolvimento. Sou proativa, focada em resultados e reconhecida pela capacidade de aprender novas tecnologias rapidamente (incluindo o prêmio de Melhor Estagiária em 2023).
-
-          Detalhes dos meus projetos (TaskFlow, CRUDs) e código limpo estão disponíveis no meu Portfólio e GitHub.
+          Frontend Developer e estudante de Sistemas de Informação, com
+          experiência no desenvolvimento de interfaces modernas, escaláveis e
+          orientadas à performance utilizando React.js, TypeScript e ecossistema
+          Next.js. Atuo na construção de aplicações com foco em arquitetura
+          frontend, componentização, responsividade e experiência do usuário,
+          participando da evolução de produtos SaaS e soluções institucionais.
+          Tenho interesse em engenharia de software, sistemas escaláveis e
+          integração entre frontend e backend, buscando unir qualidade visual,
+          organização de código e eficiência técnica.
         </Typography>
         <Typography variant="h4" textAlign="center" pt={6}>
           Skills
@@ -112,11 +112,30 @@ const About = () => {
           spacing={2}
           pt={3}
           sx={{
-            maxWidth: '100%',
+            maxWidth: "100%",
             paddingX: { xs: 2, sm: 4, md: 6 },
           }}
         >
-          {["HTML", "CSS", "JavaScript", "React", "Vue", "TypeScript", "Java", "Python", "Node.js", "Express", "NestJS", "MySQL", "TailwindCSS", "Material-UI", "Git", "GitHub", "Figma", "Pandas"].map(skill => (
+          {[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Vue",
+            "TypeScript",
+            "Java",
+            "Python",
+            "Node.js",
+            "Express",
+            "NestJS",
+            "MySQL",
+            "TailwindCSS",
+            "Material-UI",
+            "Git",
+            "GitHub",
+            "Figma",
+            "Pandas",
+          ].map((skill) => (
             <Grid item xs={12} md={2.4} key={skill}>
               <StyledSkills variant="outlined">
                 <Typography variant="body1">{skill}</Typography>
