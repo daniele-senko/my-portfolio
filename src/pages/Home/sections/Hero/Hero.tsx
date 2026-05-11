@@ -1,33 +1,9 @@
-import { Grid, styled, Container, Typography, Box } from "@mui/material";
+import { Download, Mail } from "lucide-react"; // Novos ícones
 import Avatar from "../../../../assets/images/avatar.jpg";
-import theme from "../../../../theme";
-import DownloadIcon from "@mui/icons-material/Download";
-import MailIcon from "@mui/icons-material/Mail";
-import StyledButton from "../../../../components/StyledButton/StyledButton";
+import { Button } from "../../../../components/ui/Button";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 
 const Hero = () => {
-  const StyledHero = styled("div")(() => ({
-    backgroundColor: theme.palette.primary.main,
-    minHeight: "100vh",
-    display: "flex",
-    alignItems: "center",
-    [theme.breakpoints.up("xs")]: {
-      // <= mobile
-      paddingTop: "100px",
-    },
-    [theme.breakpoints.up("md")]: {
-      // >=mobile
-      paddingTop: "0",
-    },
-  }));
-
-  const StyledImg = styled("img")(({ theme }) => ({
-    width: "60%",
-    borderRadius: "50%",
-    border: `1px solid ${theme.palette.primary.contrastText}`,
-  }));
-
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = "/files/curriculo.pdf";
@@ -38,77 +14,57 @@ const Hero = () => {
   };
 
   const handleContact = () => {
-    window.location.href = "mailto:danielesenko@hotmail.com, '_blank'";
+    window.location.href = "mailto:danielesenko@hotmail.com";
   };
 
   return (
-    <>
-      <StyledHero id="home">
-        <Container maxWidth="lg">
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={5}>
-              <Box position="relative">
-                <Box position="absolute" width={"110%"} top={-100} right={0}>
-                  <AnimatedBackground />
-                </Box>
-                <Box position="relative" textAlign="center">
-                  <StyledImg src={Avatar} />
-                </Box>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={7}>
-              <Typography
-                color="primary.contrastText"
-                variant="h1"
-                textAlign="center"
-              >
-                Daniele Senko
-              </Typography>
-              <Typography
-                color="primary.contrastText"
-                variant="h3"
-                textAlign="center"
-                pb={2}
-              >
-                I'm a Web Developer
-              </Typography>
-              <Grid
-                container
-                display="flex"
-                justifyContent="center"
-                spacing={3}
-                pt={3}
-              >
-                <Grid
-                  item
-                  xs={12}
-                  md={4}
-                  display="flex"
-                  justifyContent="center"
-                >
-                  <StyledButton onClick={handleDownloadCV}>
-                    <DownloadIcon />
-                    <Typography>Download CV</Typography>
-                  </StyledButton>
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  md={4}
-                  display="flex"
-                  justifyContent="center"
-                >
-                  <StyledButton onClick={handleContact}>
-                    <MailIcon />
-                    <Typography>Contato</Typography>
-                  </StyledButton>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Container>
-      </StyledHero>
-    </>
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden pt-24 md:pt-0"
+    >
+      {/* Brilho difuso de fundo (Aura Global) */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-150 h-150 bg-[radial-gradient(circle,var(--color-aura-neon)_0%,transparent_70%)] opacity-15 blur-[60px] pointer-events-none z-0"></div>
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+          {/* Imagem (5 colunas) */}
+          <div className="md:col-span-5 relative flex justify-center order-1 md:order-0">
+            <div className="absolute w-[110%] -top-24 right-0 opacity-60">
+              <AnimatedBackground />
+            </div>
+
+            <img
+              src={Avatar}
+              alt="Avatar Daniele Senko"
+              className="w-3/5 rounded-full border-2 border-white/10 shadow-glow transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-glow-hover hover:border-aura-neon relative z-10"
+            />
+          </div>
+
+          {/* Textos e Botões (7 colunas) */}
+          <div className="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-0">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 bg-linear-to-tr from-white via-white to-aura-neon bg-clip-text text-transparent drop-shadow-[0_4px_20px_rgba(245,0,87,0.25)]">
+              Daniele Senko
+            </h1>
+
+            <h3 className="text-xl md:text-2xl font-light text-gray-400 tracking-wide mb-10">
+              I'm a Frontend Developer
+            </h3>
+
+            <div className="flex flex-col sm:flex-row gap-4 w-full justify-center md:justify-start">
+              <Button onClick={handleDownloadCV}>
+                <Download size={20} />
+                <span>Download CV</span>
+              </Button>
+
+              <Button onClick={handleContact}>
+                <Mail size={20} />
+                <span>Contato</span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
